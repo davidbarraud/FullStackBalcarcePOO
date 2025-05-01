@@ -111,7 +111,6 @@ miCamioneta.cargar(300);
 miCamioneta.descargar();
 miCamioneta.acelerar();
 miCamioneta.acelerar();
-miAutoCarrera.acelerar(10);
 miCamioneta.acelerar();
-
+miCamioneta.frenar();
 
