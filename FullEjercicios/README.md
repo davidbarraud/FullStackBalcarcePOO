@@ -116,7 +116,7 @@ libro2.cargarLibro();
 console.log("\nInformación de los libros:");
 libro1.info();
 libro2.info();
-
+```
 
 # Clase 🧮 Calculadora en TypeScript
 
