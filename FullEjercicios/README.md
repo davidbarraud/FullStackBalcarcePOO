@@ -75,6 +75,92 @@ Modela un rectángulo y permite calcular sus propiedades geométricas.
 
 ---
 
+## 📚 Clase Libro en TypeScript
+
+Este proyecto implementa una clase llamada `Libro` en TypeScript, que permite cargar y mostrar información sobre libros ingresados por el usuario mediante consola.
+
+## 📚 Descripción de la Clase
+
+La clase `Libro` contiene los siguientes **atributos privados**:
+
+- `titulo: string`
+- `autor: string`
+- `isbn: string`
+- `paginas: number`
+
+### 🛠️ Métodos
+
+- `constructor()`: Inicializa los atributos con valores por defecto.
+- `cargarLibro(): void`: Solicita al usuario que ingrese los datos del libro (título, autor, ISBN y número de páginas) utilizando `readline-sync`.
+- `info(): void`: Muestra por consola todos los datos del libro cargado.
+
+## 🧪 Uso
+
+Se crean dos instancias de la clase `Libro`, y se llama a los métodos para:
+
+1. Cargar los datos del libro desde la consola.
+2. Mostrar la información cargada.
+
+### 💡 Código de ejemplo de uso:
+
+```ts
+const libro1 = new Libro();
+const libro2 = new Libro();
+
+console.log("Carga del primer libro:");
+libro1.cargarLibro();
+
+console.log("\nCarga del segundo libro:");
+libro2.cargarLibro();
+
+console.log("\nInformación de los libros:");
+libro1.info();
+libro2.info();
+
+
+# Clase 🧮 Calculadora en TypeScript
+
+Este proyecto implementa una clase `Calculadora` en TypeScript, que permite realizar operaciones matemáticas básicas: suma, resta, multiplicación y división. Los resultados son mostrados directamente en consola.
+
+## 🧮 Descripción de la Clase
+
+La clase `Calculadora` posee un único atributo:
+
+- `resultado: number` — almacena el resultado de la operación actual.
+
+### 🛠️ Métodos
+
+- `constructor()`: Inicializa `resultado` con el valor 0.
+- `suma(num1: number, num2: number): void`: Suma dos números y muestra el resultado.
+- `resta(num1: number, num2: number): void`: Resta dos números y muestra el resultado.
+- `multiplicar(num1: number, num2: number): void`: Multiplica dos números. Si alguno es 0, lo informa especialmente.
+- `dividir(num1: number, num2: number): void`: Divide dos números. Si alguno es 0, informa que la operación no se puede realizar.
+
+## 🔢 Ejemplo de uso
+
+El siguiente bloque de código muestra múltiples ejemplos de uso de la clase:
+
+```ts
+const operacion = new Calculadora();
+
+operacion.suma(123, 2);
+operacion.suma(100, 10);
+
+operacion.resta(9, 5);
+operacion.resta(487, 500);
+
+operacion.multiplicar(10, 10);
+operacion.multiplicar(0, 10);
+operacion.multiplicar(10, 0);
+operacion.multiplicar(5, 5);
+
+operacion.dividir(10, 10);
+operacion.dividir(0, 10);
+operacion.dividir(10, 0);
+operacion.dividir(99, 3);
+operacion.dividir(8, 10);
+```
+
 ### 🛠️ Requisitos
 - TypeScript
 
