@@ -24,7 +24,7 @@ Este proyecto implementa un sistema de clases en TypeScript que modela distintos
 
 Compila el archivo TypeScript y ejecútalo con Node:
 
-```bash
+
 tsc archivo.ts
 node archivo.js
 
@@ -48,7 +48,7 @@ Este proyecto demuestra el uso de herencia en programación orientada a objetos 
 
 Para compilar y ejecutar el código:
 
-```bash
+
 tsc archivo.ts
 node archivo.js
 
