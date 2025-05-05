@@ -4,6 +4,7 @@
 Este repositorio contiene ejemplos de clases en TypeScript que representan diferentes objetos del mundo real: un automóvil, una persona, un televisor y un rectángulo. Cada clase tiene sus propias propiedades y métodos que permiten simular comportamientos específicos.
 
 ---
+# Ejercicio 1
 
 ## 🚗 Clase `Automovil`
 
@@ -20,7 +21,7 @@ Representa un auto con marca, modelo y año.
 - `mostrarInfo()`: Muestra por consola la información del auto solo si está encendido.
 
 ---
-
+# Ejercicio 2
 ## 🧍 Clase `Persona`
 
 Simula una persona con nombre, apellido y edad.
@@ -37,7 +38,7 @@ Simula una persona con nombre, apellido y edad.
 - `comprar(producto: string, precio: number)`: Imprime un mensaje de compra con producto y precio.
 
 ---
-
+# Ejercicio 3
 ## 📺 Clase `Televisor`
 
 Simula un televisor con controles de canal, volumen, encendido y mute.
@@ -59,7 +60,7 @@ Simula un televisor con controles de canal, volumen, encendido y mute.
 - `bajarVolumen()`: Disminuye el volumen si no está muteado y no es 0.
 
 ---
-
+# Ejercicio 4
 ## 🟥 Clase `Rectangulo`
 
 Modela un rectángulo y permite calcular sus propiedades geométricas.
@@ -74,7 +75,7 @@ Modela un rectángulo y permite calcular sus propiedades geométricas.
 - `mostrarInfo()`: Imprime los valores de alto y ancho.
 
 ---
-
+# Ejercicio 5
 ## 📚 Clase Libro en TypeScript
 
 Este proyecto implementa una clase llamada `Libro` en TypeScript, que permite cargar y mostrar información sobre libros ingresados por el usuario mediante consola.
@@ -117,7 +118,7 @@ console.log("\nInformación de los libros:");
 libro1.info();
 libro2.info();
 ```
-
+# Ejercicio 6
 # Clase 🧮 Calculadora en TypeScript
 
 Este proyecto implementa una clase `Calculadora` en TypeScript, que permite realizar operaciones matemáticas básicas: suma, resta, multiplicación y división. Los resultados son mostrados directamente en consola.
@@ -172,6 +173,60 @@ tsc archivo.ts
 node archivo.js
 
 ```
+# Ejercicio 7: Clase Dado
+
+La clase `Dado` simula el comportamiento de un dado de seis caras.
+
+### Atributos
+
+* `valor`:  (privado, tipo `number`) Almacena el valor actual del dado (entre 1 y 6).
+
+### Métodos
+
+* `constructor()`: Inicializa el dado con un valor aleatorio entre 1 y 6.
+* `lanzarDado()`: Simula el lanzamiento del dado, asignando un nuevo valor aleatorio entre 1 y 6 al atributo `valor` y devuelve el nuevo valor.
+* `inicializarDado()`: (privado, tipo `number`) Genera un número aleatorio entre 1 y 6 y lo asigna a `this.valor`.
+
+### Implementación
+
+El código crea una instancia de la clase `Dado` y simula 10 lanzamientos, mostrando el resultado de cada uno en la consola.
+
+# Ejercicio 8: Clase CuentaBancaria
+
+La clase `CuentaBancaria` representa una cuenta bancaria.
+
+### Atributos
+
+* `saldoActual`: (privado, tipo `number`) Almacena el saldo actual de la cuenta.
+* `numeroCuenta`: (privado, tipo `number`) Almacena el número de cuenta.
+
+### Métodos
+
+* `constructor(numeroCuenta: number, saldoActual: number)`:  Inicializa una nueva instancia de `CuentaBancaria` con el número de cuenta y saldo proporcionados.
+* `agregarDinero(num: number)`:  Incrementa el saldo actual en la cantidad especificada (`num`). Imprime un mensaje en la consola indicando la transacción y el nuevo saldo.
+* `retirarDinero(num: number)`:  Disminuye el saldo actual en la cantidad especificada si hay fondos suficientes. Si no hay fondos suficientes, imprime un mensaje de error.  Imprime un mensaje en la consola indicando la transacción y el nuevo saldo (o el error).
+* `mostraSaldo()`: Imprime en la consola el número de cuenta y el saldo actual.
+
+### Implementación
+
+El código crea una instancia de `CuentaBancaria`, realiza algunas operaciones de depósito y retiro, y muestra el saldo en la consola.
+
+# Ejercicio 9: Clase Decodificador
+
+La clase `Decodificador`  representa un decodificador de TV.
+
+### Atributos
+
+* `canal`: (privado, tipo `number`) Almacena el canal actual (entre 1 y 99).
+
+### Métodos
+
+* `constructor()`: Inicializa el decodificador en el canal 1.
+* `aumentarCanal(num: number)`:  Aumenta el canal actual en la cantidad especificada. Si el nuevo canal excede 99, vuelve al canal 1. Imprime un mensaje en la consola indicando el cambio.
+* `disminuirCanal(num: number)`: Disminuye el canal actual en la cantidad especificada. Si el nuevo canal es menor que 1,  va al canal 99. Imprime un mensaje en la consola indicando el cambio.
+
+
+**Nota:** El ejercicio 9 menciona la clase `Televisor` del ejercicio 2, pero esa clase no está incluida en los archivos proporcionados. Por lo tanto, `Decodificador` se implementa de forma independiente.
 
 # Ejercicio 10 Proyecto Registro Automotor - TypeScript
 
