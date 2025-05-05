@@ -170,3 +170,173 @@ Compilar los archivos `.ts` usando el compilador de TypeScript y luego ejecutar 
 ```bash
 tsc archivo.ts
 node archivo.js
+
+```
+
+# Ejercicio 10 Proyecto Registro Automotor - TypeScript
+
+Este proyecto simula un sistema básico de registro de automóviles utilizando **TypeScript** orientado a objetos. Está compuesto por dos clases principales:
+
+- `Automovil` (en `Auto.ts`): representa un automóvil individual.
+- `RegistroAutomotor` (en `RegistroAutomotor.ts`): gestiona el registro y operaciones sobre los automóviles.
+
+---
+
+## 📁 Archivo: `Auto.ts`
+
+### Clase: `Automovil`
+
+Contiene las propiedades y métodos relacionados con un solo automóvil.
+
+#### Propiedades privadas:
+- `marca`: marca del vehículo (ej: Ford).
+- `modelo`: modelo del vehículo (ej: Fiesta).
+- `anio`: año de fabricación.
+- `encendido`: estado del motor (`true` o `false`).
+- `patente`: número de patente (clave única para buscarlo).
+
+#### Constructor:
+Recibe `marca`, `modelo`, `anio`, y `patente`. Inicializa el auto como apagado.
+
+#### Métodos públicos:
+- `encenderApagar()`: alterna el estado `encendido` y muestra un mensaje por consola.
+- `getPatente()`: devuelve la patente del auto.
+- `actualizarDatos(marca, modelo, anio)`: actualiza los datos del auto (menos la patente).
+- `mostrarInfo()`: imprime en consola la información completa del auto.
+
+> Incluye un bloque comentado para probar la creación y uso de un `Automovil`.
+
+---
+
+## 📁 Archivo: `RegistroAutomotor.ts`
+
+### Clase: `RegistroAutomotor`
+
+Representa una base de datos interna (array) de autos registrados.
+
+#### Propiedades:
+- `autos`: array de objetos `Automovil`.
+- `nombre`: nombre del registro (ej: "Balcarce").
+
+#### Constructor:
+Inicializa el registro con un nombre y un array vacío de autos.
+
+#### Métodos:
+- `info()`: imprime el nombre del registro.
+- `mostrarRegistros()`: recorre e imprime todos los autos registrados.
+- `agregarAuto(auto)`: agrega un auto si no existe otro con la misma patente.
+- `actualizarAuto(marca, modelo, anio, patente)`: busca un auto por patente y actualiza sus datos.
+- `eliminarAuto(patente)`: elimina un auto del array si la patente coincide.
+- `buscarAuto(patente)`: busca e imprime la información del auto si se encuentra.
+
+---
+
+### 🧪 Código de prueba incluido
+
+El archivo incluye una sección final con la siguiente funcionalidad:
+
+- Se crean varios autos con distintos datos.
+- Se agregan al registro (con manejo de duplicados).
+- Se encienden algunos autos y se muestra su info.
+- Se actualiza uno de los autos.
+- Se realizan búsquedas por patente.
+- Se eliminan registros por patente (incluyendo pruebas de eliminación fallida).
+- Finalmente, se muestran todos los autos restantes en el registro.
+
+---
+
+## 🛠️ Requisitos para ejecución
+
+- Tener instalado Node.js + TypeScript.
+- Compilar los archivos `.ts` usando `tsc`.
+- Ejecutar el archivo compilado con Node.js.
+
+```bash
+tsc Auto.ts RegistroAutomotor.ts
+node RegistroAutomotor.js
+```
+
+# Ejercicio 11 Sistema Educativo
+
+Este código TypeScript modela un sistema educativo con las siguientes características:
+
+* **Profesores:** Mantienen una lista de sus alumnos asignados.
+* **Alumnos:** Conocen su nota y pueden informar si están aprobados (nota mayor o igual a 7) o no.
+* **Escuela (Colegio):** Gestiona un registro de alumnos y profesores, permitiendo la matriculación/contratación y expulsión/despido.
+
+## Clases
+
+### `Persona` (Importada)
+
+Se asume que la clase `Persona` está definida en `../Ejercicio2/Persona.ts` y contiene propiedades básicas como `nombre`, `apellido`, `edad` y `dni`.  Esta clase es la superclase de `Alumno` y `Profesor`.
+
+### `Alumno`
+
+* **Propiedades:**
+    * `nota`:  La nota del alumno.
+* **Constructor:**
+    * Inicializa un nuevo alumno con nombre, apellido, edad, DNI y nota.
+* **Métodos:**
+    * `mostrarInfo()`:  Muestra la información del alumno, incluyendo su estado de aprobación.
+    * `getDni()`:  Retorna el DNI del alumno.
+    * `getNombre()`: Retorna el nombre completo del alumno.
+
+### `Profesor`
+
+* **Propiedades:**
+    * `alumnos`:  Un array de objetos `Alumno` que representa la lista de alumnos asignados al profesor.
+* **Constructor:**
+    * Inicializa un nuevo profesor con nombre, apellido, edad y DNI.  Inicializa la lista de alumnos como un array vacío.
+* **Métodos:**
+    * `mostrarInfo()`:  Muestra la información del profesor.
+    * `getNombre()`: Retorna el nombre completo del profesor.
+    * `asignarAlumno(alumno: Alumno)`:  Agrega un alumno a la lista de alumnos del profesor.
+    * `listarAlumnos()`:  Muestra la información de todos los alumnos asignados al profesor.
+    * `quitarAlumno(dni: number)`:  Elimina un alumno de la lista del profesor por su DNI.
+
+### `Colegio`
+
+* **Propiedades:**
+    * `nombre`:  El nombre del colegio.
+    * `alumnos`:  Un array de objetos `Alumno` que representa la lista de alumnos matriculados en el colegio.
+    * `profesores`:  Un array de objetos `Profesor` que representa la lista de profesores contratados por el colegio.
+* **Constructor:**
+    * Inicializa un nuevo colegio con un nombre y listas de alumnos y profesores vacías.
+* **Métodos:**
+    * `mostrarInfo()`:  Muestra el nombre del colegio.
+
+    * **Métodos para Alumnos:**
+        * `matricularAlumno(alumno: Alumno)`:  Agrega un alumno a la lista de alumnos del colegio.
+        * `listarAlumnos()`:  Muestra la información de todos los alumnos matriculados en el colegio.
+        * `expulsarAlumno(dni: number)`:  Elimina un alumno de la lista de alumnos del colegio por su DNI.
+
+    * **Métodos para Profesores:**
+        * `contratarProfesor(profesor: Profesor)`:  Agrega un profesor a la lista de profesores del colegio.
+        * `listarProfesores()`:  Muestra la información de todos los profesores contratados por el colegio.
+        * `despedirProfesor(dni: number)`:  Elimina un profesor de la lista de profesores del colegio por su DNI.
+
+## Implementación
+
+El código incluye una sección de implementación que demuestra el uso de las clases:
+
+1.  Se crea una instancia de `Colegio` llamada `escuela`.
+2.  Se crean varias instancias de `Alumno` y `Profesor`.
+3.  Se utilizan los métodos de `Colegio` para matricular alumnos y contratar profesores.
+4.  Se utilizan los métodos de `Profesor` para asignar alumnos y listar sus alumnos.
+5.  Se demuestran las funcionalidades de listar alumnos y profesores del colegio y de quitar alumnos y profesores.
+
+## Uso
+
+Para utilizar este código:
+
+1.  Asegúrate de tener TypeScript instalado (`npm install -g typescript`).
+2.  Guarda el código en un archivo llamado, por ejemplo, `SistemaEducativo.ts`.
+3.  Si la clase `Persona` está en otro archivo, asegúrate de que la ruta en el `import` sea correcta.
+4.  Compila el código TypeScript: `tsc SistemaEducativo.ts`.  Esto generará un archivo JavaScript (`SistemaEducativo.js`).
+5.  Ejecuta el archivo JavaScript con Node.js: `node SistemaEducativo.js`.
+
+## Notas
+
+* El código utiliza `console.log()` para mostrar la información.  En una aplicación real, se usaría una interfaz de usuario o un mecanismo de persistencia de datos.
+* La clase `Persona` es una dependencia externa.
+* El código demuestra conceptos de programación orientada a objetos como herencia (con `extends Persona`), polimorfismo (con el método `mostrarInfo()`) y encapsulación (con el uso de `private` y `protected`).

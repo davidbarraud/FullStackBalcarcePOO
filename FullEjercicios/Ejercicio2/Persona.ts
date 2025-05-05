@@ -1,26 +1,32 @@
 /* 2-Plantear una clase Persona, pensar que atributos y métodos puede tener e implementarla en
 Typescript. */
 
-class Persona {
+export class Persona {
     //Propiedades
-    private nombre: string;
-    private apellido: string;
-    private edad: number;
+    protected nombre: string;
+    protected apellido: string;
+    protected edad: number;
+    protected dni: number;
    
     //Constructor
-    public constructor(nombre: string, apellido: string, edad: number) {
+    public constructor(nombre: string, apellido: string, edad: number, dni: number) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad= edad;
+        this.dni = dni;
        
     }
 
 
     public mostrarInfo(): void {
-       console.log(`La persona se llama  ${this.nombre} ${this.apellido} \n`);
+       console.log(`La persona se llama  ${this.nombre} ${this.apellido}, tiene ${this.edad} años y su DNI es: ${this.dni} \n`);
         
     }
     
+    public getDni(): number {
+       return this.dni;
+         
+     }
     public esMayor(): void {
         if (this.edad >=18 ) {
             console.log(`${this.nombre} ${this.apellido} es mayor de edad. \n`);
@@ -40,7 +46,7 @@ class Persona {
      } 
 }
 
-const persona1 = new Persona("Chuck", "Norris", 28);
+const persona1 = new Persona("Chuck", "Norris", 28, 24567890);
 persona1.mostrarInfo();
 persona1.esMayor();
 persona1.correr();
