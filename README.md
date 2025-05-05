@@ -144,3 +144,34 @@ Para ejecutar este proyecto:
 1. Asegúrate de tener instalado TypeScript:
    ```bash
    npm install -g typescript
+
+# 7. Dado.ts
+
+Simula un dado de seis caras.
+
+- **Clase**: `Dado`
+- **Métodos**:
+  - `lanzar()`: Genera un número aleatorio del 1 al 6.
+  - `obtenerCara()`: Retorna el valor actual del dado.
+
+# 8. CuentaBancaria.ts
+
+Simula una cuenta bancaria con funcionalidades básicas.
+
+- **Clase**: `CuentaBancaria`
+- **Propiedades privadas**:
+  - `titular`: Nombre del dueño de la cuenta.
+  - `saldo`: Monto actual en la cuenta.
+- **Métodos**:
+  - `depositar(monto: number)`: Agrega dinero a la cuenta.
+  - `retirar(monto: number)`: Retira dinero si hay saldo suficiente.
+  - `consultarSaldo()`: Devuelve el saldo actual.
+  - `obtenerTitular()`: Devuelve el nombre del titular.
+
+# 9. Decodificador.ts
+
+Decodifica cadenas que utilizan caracteres especiales para representar letras.
+
+- **Clase**: `Decodificador`
+- **Método**:
+  - `decodificar(cadena: string)`: Reemplaza ciertos símbolos por letras según un diccionario de transformación.

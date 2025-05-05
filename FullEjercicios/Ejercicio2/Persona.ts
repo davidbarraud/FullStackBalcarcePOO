@@ -1,3 +1,6 @@
+/* 2-Plantear una clase Persona, pensar que atributos y métodos puede tener e implementarla en
+Typescript. */
+
 class Persona {
     //Propiedades
     private nombre: string;

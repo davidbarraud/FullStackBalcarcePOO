@@ -1,9 +1,16 @@
+/* 3-Implementar la clase Televisor con todos los atributos y métodos, como se vio en clase, incluido
+la funcionalidad mute. */
+//importando clase Decodificador del ejercicio9
+import { Decodificador } from "../Ejercicio9/Decodificador";
+
 class Televisor {
     private marca: string
     private volumen: number ;
     private canal: number ;
     private encendido: boolean ;
     private mute: boolean;
+    // usando clase Decodificador por Composición
+    private decodificador: Decodificador;
    
     public constructor(marca: string) {
         this.marca = marca;
@@ -11,6 +18,7 @@ class Televisor {
         this.canal = 1;
         this.encendido = false;
         this.mute = false;
+        this.decodificador = new Decodificador();
     }
 
  
@@ -29,23 +37,11 @@ class Televisor {
     }
     
     public aumentarCanal(num:number): void {
-        if (this.canal + num > 99) {
-            this.canal = 1;
-            console.log(`El canal actual es el  ${this.canal}.`);
-        } else {
-            this.canal += num;
-            console.log(`El canal actual es el  ${this.canal}.`);
-        }
+        this.decodificador.aumentarCanal(num);
     }
 
     public disminuirCanal(num:number): void {
-        if (this.canal - num < 1) {
-            this.canal = 99;
-            console.log(`El canal actual es el  ${this.canal}.`);
-        } else {
-            this.canal -= num;
-            console.log(`El canal actual es el  ${this.canal}.`);
-        }
+       this.decodificador.disminuirCanal(num);
     }
     
     public cambiarMutear():void{
@@ -60,7 +56,8 @@ class Televisor {
           return        
          } else {
           this.volumen +=1;
-          console.log(`El volumen actual es  ${this.volumen}.`);
+          console.log(`Subiendo el volumen ======.`);
+          console.log(`El volumen actual es ${this.volumen}.\n`);
          }
       }
     }
@@ -73,7 +70,8 @@ class Televisor {
               return       
             } else {
              this.volumen -=1;
-             console.log(`El volumen actual es  ${this.volumen}.`);
+             console.log(`Bajando el volumen ======.`);
+             console.log(`El volumen actual es ${this.volumen}.\n`);
             }
         }
      }

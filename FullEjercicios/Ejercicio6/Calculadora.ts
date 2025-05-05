@@ -1,3 +1,9 @@
+/* 6-Implementar una clase que simule el comportamiento de una Calculadora, con dos números y
+las cuatro operaciones básicas: suma resta, multiplicación y división. Todas la operaciones deben
+retornar un resultado, que luego va a ser mostrado por un método aparte. A su vez en las
+operaciones de multiplicación y división se debe validar que no se ingrese un valor igual a 0.
+Probar la calculadora con diferentes valores
+ */
 class Calculadora {
     //Propiedades
     private resultado: number;

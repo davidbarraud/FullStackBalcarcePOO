@@ -1,3 +1,5 @@
+/* 1- Plantear una clase Auto de la forma en que se vió en la clase → especificando variables internas
+y métodos. Implementar en TypeScript */
 class Automovil {
     //Propiedades
     private marca: string;
