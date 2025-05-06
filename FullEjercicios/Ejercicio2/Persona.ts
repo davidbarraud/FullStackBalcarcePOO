@@ -27,6 +27,11 @@ export class Persona {
        return this.dni;
          
      }
+     
+     public getNombre(): string {
+        return this.nombre +" " + this.apellido;
+    }
+
     public esMayor(): void {
         if (this.edad >=18 ) {
             console.log(`${this.nombre} ${this.apellido} es mayor de edad. \n`);
@@ -46,10 +51,12 @@ export class Persona {
      } 
 }
 
-const persona1 = new Persona("Chuck", "Norris", 28, 24567890);
+//IMPLEMENTACIÓN
+// Descomentar ya que esta clase se usa en el Ejercicio 14
+/* const persona1 = new Persona("Chuck", "Norris", 28, 24567890);
 persona1.mostrarInfo();
 persona1.esMayor();
 persona1.correr();
 persona1.comprar("Pan", 2500.99);
 persona1.comprar("Lechuga", 399.54);
-persona1.comprar("Nunchacus", 125000);
+persona1.comprar("Nunchacus", 125000); */

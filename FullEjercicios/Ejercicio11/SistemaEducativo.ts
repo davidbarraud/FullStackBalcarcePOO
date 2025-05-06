@@ -53,7 +53,7 @@ class Profesor extends Persona{
 
     //Método para obtener el nombre 
 public getNombre(): string {
-    return this.nombre + this.apellido;
+    return this.nombre +" " + this.apellido;
 }
 
 
@@ -206,3 +206,7 @@ profe2.quitarAlumno(26999000);
 profe2.quitarAlumno(42555789);
 profe2.quitarAlumno(4255);
 profe2.listarAlumnos();
+
+escuela.despedirProfesor(32934763);
+escuela.expulsarAlumno(49678555);
+escuela.listarAlumnos();

@@ -6,7 +6,7 @@ cuenta con varios métodos.
 atributo valor del dado
 ● Método que devuelve el valor actual del dado. */
 
-class Dado {
+export class Dado {
     //Propiedades
     private valor: number;
       
@@ -36,7 +36,9 @@ private inicializarDado(): number {
 }
 
 //Implementación: creamos el dado y lo lanzamos 10 veces
-const dado1 = new Dado;
+//Esta comentado porque se usa esta clase en el Ejercicio 12
+/* const dado1 = new Dado;
 for (let i = 0; i < 10; i++) {
     console.log (`El valor del dado en el lanzamiento ${i + 1} es: ${dado1.lanzarDado()} \n`);
 }
+ */
