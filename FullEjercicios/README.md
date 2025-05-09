@@ -395,3 +395,133 @@ Para utilizar este código:
 * El código utiliza `console.log()` para mostrar la información.  En una aplicación real, se usaría una interfaz de usuario o un mecanismo de persistencia de datos.
 * La clase `Persona` es una dependencia externa.
 * El código demuestra conceptos de programación orientada a objetos como herencia (con `extends Persona`), polimorfismo (con el método `mostrarInfo()`) y encapsulación (con el uso de `private` y `protected`).
+
+# Ejercicio 12 🎲 Simulación de Cubilete con 5 Dados
+
+Este proyecto en TypeScript implementa una clase `Cubilete` que simula el comportamiento de un cubilete con 5 dados, utilizando una clase auxiliar `Dado`. Permite lanzar todos los dados a la vez o lanzar un dado específico, replicando una mecánica típica de juegos como Generala o Yahtzee.
+
+## 📁 Estructura
+
+- `Cubilete.ts`: Contiene la clase `Cubilete`, que crea y administra cinco instancias de la clase `Dado`.
+- Se importa `Dado` desde `../Ejercicio7/Dado`.
+
+## 🧠 Funcionalidad
+
+### Clase `Cubilete`
+
+- **Constructor**
+  - Crea un arreglo de 5 dados (`Dado[]`).
+  
+- **Método `lanzarDados()`**
+  - Lanza los 5 dados del cubilete.
+  - Muestra el valor de cada dado.
+  - Devuelve la suma total de los valores obtenidos.
+
+- **Método `lanzarDado(num: number)`**
+  - Lanza un solo dado específico (1 al 5).
+  - Muestra el valor del dado seleccionado.
+  - Informa si el dado solicitado no existe (fuera del rango 1–5).
+
+## ✅ Ejemplo de uso
+
+```typescript
+const cubilete1 = new Cubilete();
+cubilete1.lanzarDados();
+cubilete1.lanzarDado(1);
+cubilete1.lanzarDado(2);
+```
+
+# Ejercicio 13 📚 Sistema de Gestión de Biblioteca
+
+Este proyecto en TypeScript simula el funcionamiento de un sistema para gestionar una colección de libros. Utiliza una clase `Biblioteca` que permite realizar las operaciones básicas: **alta, baja, modificación y consulta** de libros, utilizando como base la clase `Libro` del ejercicio 5.
+
+## 📁 Estructura
+
+- `Biblioteca.ts`: Implementa una clase `Biblioteca` que administra una lista de libros.
+- Se importa `Libro` desde `../Ejercicio5/Libro`.
+
+## 🧠 Funcionalidad
+
+### Clase `Biblioteca`
+
+- **Atributos:**
+  - `nombre`: Nombre de la biblioteca.
+  - `listaLibros`: Arreglo que contiene objetos `Libro`.
+
+- **Métodos principales:**
+
+  - `crearLibros()`: Permite ingresar libros manualmente mediante consola.
+  - `insertarLibro(libro: Libro)`: Agrega un libro si no existe previamente.
+  - `consultarLibro(titulo: string)`: Busca un libro por título y muestra sus datos.
+  - `modificarLibro(titulo: string)`: Permite modificar los datos de un libro existente.
+  - `eliminarLibro(titulo: string)`: Realiza una baja lógica (marca el libro como inactivo).
+
+### 🔒 Validación
+
+Antes de cualquier operación (incluso insertar), se verifica si el libro ya existe en la colección. Además, cada libro incluye un campo `activo` para saber si está dado de baja o no.
+
+## ✅ Ejemplo de uso
+
+```typescript
+const miBiblioteca = new Biblioteca("Biblioteca Central");
+miBiblioteca.crearLibros(); // Carga libros manualmente
+miBiblioteca.consultarLibro("El Principito");
+```
+
+# Ejercicio 14 🎲 Juego de Generala en TypeScript
+
+Este proyecto implementa una versión simplificada del clásico juego de Generala utilizando programación orientada a objetos en TypeScript. Se utilizan las clases `Persona`, `Cubilete` y una nueva clase `Jugador` para modelar la lógica del juego.
+
+## 🧩 Reglas del Juego
+
+Cada jugador lanza un cubilete (5 dados) hasta **3 veces** por turno. Se buscan las siguientes marcas:
+
+- 🎯 **Escalera**: 20 puntos
+- 🧩 **Full**: 30 puntos
+- 💥 **Póker**: 40 puntos
+- 👑 **Generala**: 50 puntos
+
+> Si ningún jugador logra una marca tras 3 tiros, se declara **empate**. Existe un método de desempate implementado.
+
+## 📁 Estructura
+
+- `Generala.ts`: Archivo principal del juego.
+- Requiere:
+  - `Persona` desde `../Ejercicio2/Persona`
+  - `Cubilete` desde `../Ejercicio12/Cubilete`
+
+## 🧠 Clases utilizadas
+
+### 🔹 `Jugador` (hereda de `Persona`)
+- Atributos:
+  - `puntaje`: número de puntos obtenidos por jugador.
+- Métodos:
+  - `mostrarInfo()`: Muestra datos del jugador y su puntaje.
+  - `setPuntaje()`: Asigna puntos al jugador.
+  - `getPuntaje()`: Obtiene el puntaje del jugador.
+
+### 🔸 Lógica del juego
+
+- Se solicita por consola la cantidad de jugadores y sus datos.
+- Cada jugador lanza hasta 3 veces.
+- Se detecta qué marca ha obtenido según los dados lanzados.
+- Se calcula el puntaje y se determina el ganador.
+
+## ✅ Ejemplo de uso
+
+```bash
+Ingrese la cantidad de jugadores: 2
+Jugador 1: Juan Pérez, Edad: 30, DNI: 12345678
+Jugador 2: Ana Gómez, Edad: 25, DNI: 87654321
+
+--- Turno de Juan ---
+Tiro 1: ...
+Tiro 2: ...
+Tiro 3: Escalera (20 puntos)
+
+--- Turno de Ana ---
+Tiro 1: ...
+Tiro 2: ...
+Tiro 3: Full (30 puntos)
+
+Ganadora: Ana Gómez 🎉

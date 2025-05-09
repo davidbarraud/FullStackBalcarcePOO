@@ -9,7 +9,7 @@ import { Persona } from "../Ejercicio2/Persona";
 
 //Clase Alumno
 class Alumno extends Persona{
-    protected nota: number;
+    private nota: number;
         
     constructor(nombre: string, apellido: string,  edad: number, dni: number, nota :number){
         super(nombre, apellido, edad, dni);
