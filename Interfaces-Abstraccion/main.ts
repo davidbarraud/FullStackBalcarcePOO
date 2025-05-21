@@ -116,7 +116,7 @@ console.log(miPerro.nombre);
 console.log(miPerro.raza);          
 miPerro.emitirSonido();           
 
-const miGato = new Cat("Michi", 3, "Ana", "Negro");
+const miGato = new Cat("Michifus", 10, "Martina", "Negro");
 console.log(miGato.nombre);         
 console.log(miGato.colorPelaje);   
 miGato.emitirSonido();              
